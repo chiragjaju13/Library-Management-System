@@ -27,3 +27,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# IntelliJ / JetBrains IDE files
+.idea/
+*.iml

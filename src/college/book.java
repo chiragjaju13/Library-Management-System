@@ -1,6 +1,6 @@
 package college;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class book {
 
@@ -13,8 +13,7 @@ public class book {
 
     Scanner input = new Scanner(System.in);
 
-    public book()
-    {
+    public book() {
         System.out.println("Enter Serial No of Book:");
         this.sNo = input.nextInt();
         input.nextLine();

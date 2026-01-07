@@ -1,18 +1,17 @@
 package college;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class students {
 
-    Scanner scn = new Scanner(System.in);
-    Student theStudents[] = new Student[50];
-
     public static int count = 0;
+    Scanner scn = new Scanner(System.in);
+    Student[] theStudents = new Student[50];
 
-    public void addStudent(Student s){
+    public void addStudent(Student s) {
         for (int i = 0; i < count; i++) {
             if (s.regNum.equalsIgnoreCase(theStudents[i].regNum)) {
-                System.out.println("Student of Reg Num " + s.regNum+ " is Already Registered.");
+                System.out.println("Student of Reg Num " + s.regNum + " is Already Registered.");
                 return;
             }
         }
@@ -32,8 +31,7 @@ public class students {
     }
 
     // To check the Student
-    public int isStudent()
-    {
+    public int isStudent() {
         System.out.println("Enter Reg Number:");
 
         String regNum = scn.nextLine();
@@ -69,8 +67,7 @@ public class students {
                     theStudents[studentIndex].booksCount++;
 
                     return;
-                }
-                else {
+                } else {
                     System.out.println("Student Can not Borrow more than 3 Books.");
                     return;
                 }
@@ -80,8 +77,7 @@ public class students {
     }
 
     // To add the book
-    public void checkInBook(books book)
-    {
+    public void checkInBook(books book) {
         int studentIndex = this.isStudent();
         if (studentIndex != -1) {
 
@@ -91,8 +87,8 @@ public class students {
 
             for (int i = 0; i < s.booksCount; i++) {
                 System.out.println(s.borrowedBooks[i].sNo + "\t\t\t"
-                                + s.borrowedBooks[i].bookName + "\t\t\t"
-                                + s.borrowedBooks[i].authorName);
+                        + s.borrowedBooks[i].bookName + "\t\t\t"
+                        + s.borrowedBooks[i].authorName);
             }
 
             System.out.println("Enter Serial Number of Book to be Checked In:");

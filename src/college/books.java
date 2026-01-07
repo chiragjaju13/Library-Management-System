@@ -1,17 +1,15 @@
 package college;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class books {
 
-    book theBooks[] = new book[50];
     public static int count;
-
+    book[] theBooks = new book[50];
     Scanner scn = new Scanner(System.in);
 
     //to compare books
-    public int compareBookObjects(book b1, book b2)
-    {
+    public int compareBookObjects(book b1, book b2) {
 
         if (b1.bookName.equalsIgnoreCase(b2.bookName)) {
             System.out.println("Book of this Name Already Exists.");
@@ -26,8 +24,7 @@ public class books {
     }
 
     //to add books
-    public void addBook(book b)
-    {
+    public void addBook(book b) {
         for (int i = 0; i < count; i++) {
             if (this.compareBookObjects(b, this.theBooks[i]) == 0)
                 return;
@@ -42,8 +39,7 @@ public class books {
     }
 
     // To search book by serial number
-    public void searchBySno()
-    {
+    public void searchBySno() {
         System.out.println("\t\t\t\tSEARCH BY SERIAL NUMBER\n");
 
         int sNo;
@@ -56,21 +52,20 @@ public class books {
         for (int i = 0; i < count; i++) {
             if (sNo == theBooks[i].sNo) {
                 System.out.println(theBooks[i].sNo + "\t\t"
-                                + theBooks[i].bookName + "\t\t"
-                                + theBooks[i].authorName + "\t\t"
-                                + theBooks[i].bookQtyCopy + "\t\t"
-                                + theBooks[i].bookQty);
+                        + theBooks[i].bookName + "\t\t"
+                        + theBooks[i].authorName + "\t\t"
+                        + theBooks[i].bookQtyCopy + "\t\t"
+                        + theBooks[i].bookQty);
                 flag++;
                 return;
             }
         }
         if (flag == 0)
-            System.out.println("No Book for Serial No "+ sNo + " Found.");
+            System.out.println("No Book for Serial No " + sNo + " Found.");
     }
 
 
-    public void searchByAuthorName()
-    {
+    public void searchByAuthorName() {
         System.out.println("\t\t\t\tSEARCH BY AUTHOR'S NAME");
 
         scn.nextLine();
@@ -86,10 +81,10 @@ public class books {
             if (authorName.equalsIgnoreCase(
                     theBooks[i].authorName)) {
                 System.out.println(theBooks[i].sNo + "\t\t"
-                                + theBooks[i].bookName + "\t\t"
-                                + theBooks[i].authorName + "\t\t"
-                                + theBooks[i].bookQtyCopy + "\t\t"
-                                + theBooks[i].bookQty);
+                        + theBooks[i].bookName + "\t\t"
+                        + theBooks[i].authorName + "\t\t"
+                        + theBooks[i].bookQtyCopy + "\t\t"
+                        + theBooks[i].bookQty);
                 flag++;
             }
         }
@@ -99,23 +94,21 @@ public class books {
     }
 
     // To display all books
-    public void showAllBooks()
-    {
+    public void showAllBooks() {
         System.out.println("\t\t\t\tSHOWING ALL BOOKS\n");
         System.out.println("S.No\t\tName\t\tAuthor\t\tAvailable Qty\t\tTotal Qty");
 
         for (int i = 0; i < count; i++) {
             System.out.println(theBooks[i].sNo + "\t\t"
-                            + theBooks[i].bookName + "\t\t"
-                            + theBooks[i].authorName + "\t\t"
-                            + theBooks[i].bookQtyCopy + "\t\t"
-                            + theBooks[i].bookQty);
+                    + theBooks[i].bookName + "\t\t"
+                    + theBooks[i].authorName + "\t\t"
+                    + theBooks[i].bookQtyCopy + "\t\t"
+                    + theBooks[i].bookQty);
         }
     }
 
     // To edit the book
-    public void upgradeBookQty()
-    {
+    public void upgradeBookQty() {
         System.out.println("\t\t\t\tUPGRADE QUANTITY OF A BOOK\n");
         System.out.println("Enter Serial No of Book");
 
@@ -133,8 +126,7 @@ public class books {
     }
 
     // To create menu
-    public void dispMenu()
-    {
+    public void dispMenu() {
         System.out.println("----------------------------------------------------------------------------------------------------------");
         System.out.println("Press 1 to Add new Book.");
         System.out.println("Press 2 to Upgrade Quantity of a Book.");
@@ -149,8 +141,7 @@ public class books {
     }
 
     // To search the library
-    public int isAvailable(int sNo)
-    {
+    public int isAvailable(int sNo) {
         for (int i = 0; i < count; i++) {
             if (sNo == theBooks[i].sNo) {
                 if (theBooks[i].bookQtyCopy > 0) {
@@ -169,8 +160,7 @@ public class books {
 
 
     // To remove the book from the library
-    public book checkOutBook()
-    {
+    public book checkOutBook() {
         System.out.println("Enter Serial No of Book to be Checked Out.");
         int sNo = scn.nextInt();
 
@@ -184,8 +174,7 @@ public class books {
     }
 
     // To add the Book to the Library
-    public void checkInBook(book b)
-    {
+    public void checkInBook(book b) {
         for (int i = 0; i < count; i++) {
             if (b.equals(theBooks[i])) {
                 theBooks[i].bookQtyCopy++;

@@ -1,14 +1,14 @@
 package college;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Library {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("********************Chirag's to the GFG Library!********************");
-        System.out.println("                  Select From The Following Options:               ");
+        System.out.println("******************** Welcome to the Chirag's Library!********************");
+        System.out.println("                   Select From The Following Options:               ");
         System.out.println("**********************************************************************");
 
         books ob = new books();
@@ -81,6 +81,5 @@ public class Library {
                     System.out.println("ENTER BETWEEN 0 TO 8.");
             }
         }
-
     }
 }
