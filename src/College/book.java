@@ -2,7 +2,6 @@ package College;
 
 import java.util.*;
 
-// Class
 public class book {
 
     // Class data members
