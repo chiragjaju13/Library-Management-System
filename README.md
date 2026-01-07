@@ -45,11 +45,11 @@ Library-Management-System/
 ├── src/
 │   └── college/
 │       └── 
-│         ├─ book.java          # Application entry point
-│         ├─ books.java          # Book entity
-│         ├─ Student.java       # Student entity
-│         ├─ students.java       # Core library operations
-│         └─ Library.java          # Menu display & helpers
+│         ├─ book.java          
+│         ├─ books.java         
+│         ├─ Student.java       
+│         ├─ students.java       
+│         └─ Library.java          
 │
 ├── README.md
 └── .gitignore
